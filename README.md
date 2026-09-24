@@ -1,4 +1,4 @@
-# 👨‍💻 Muhammad Fajar Ariandi — Personal Portfolio
+# 👨‍💻 Muhammad Fajar Ariandi — Personal Portfolio Template
 
 <p align="center">
   <strong>Network Technician • CCTV • Starlink • IT Support • Content Creator</strong>
