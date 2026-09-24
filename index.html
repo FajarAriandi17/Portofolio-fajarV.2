@@ -314,6 +314,9 @@ html.static .plane{opacity:1;offset-distance:56%}
 .dlg .m-top{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:start}
 .m-shot{background:#1a1450;border-radius:6px;padding:8px;box-shadow:0 8px 18px rgba(15,8,60,.35);transform:rotate(-2deg)}
 .m-shot svg{display:block;width:100%;height:auto;border-radius:3px}
+.m-real{display:none;width:100%;border-radius:6px;background:#1a1450;box-shadow:0 8px 18px rgba(15,8,60,.35);transform:rotate(-2deg)}
+.m-top.has-photo .m-real{display:block}
+.m-top.has-photo .m-shot,.m-top.has-photo .m-photo{display:none}
 .m-photo{margin-top:12px;font-family:"Patrick Hand";font-size:13px;color:#6b6880;text-align:center;background:repeating-linear-gradient(45deg,#efeadf 0 10px,#e6e0d2 10px 20px);border:2px dashed #c8c2b2;border-radius:6px;padding:14px 8px;line-height:1.25}
 .dlg .kicker{font-family:"Caveat Brush";font-size:22px;color:var(--indigo);line-height:1}
 .dlg h3{font-family:"Bowlby One";font-size:30px;line-height:1.02;color:var(--ink);margin:2px 0 8px;text-shadow:.03em .03em 0 #d9d2f7}
@@ -571,7 +574,7 @@ html.modal-open{overflow:hidden}
   <div class="dlg">
     <button class="x" type="button" data-close aria-label="Tutup detail">&times;</button>
     <div class="m-top">
-      <div><div class="m-shot" data-shot></div><p class="m-photo">Slot foto lapangan asli — akan ditambahkan di Fase 2</p></div>
+      <div class="m-left"><img class="m-real" alt="Foto lapangan instalasi Starlink" data-src="img/proyek-2.jpg"><div class="m-shot" data-shot></div><p class="m-photo">Belum ada foto lapangan. Letakkan berkas <b>img/proyek-2.jpg</b> untuk menampilkannya di sini.</p></div>
       <div>
         <p class="kicker">Selected Work · 02</p>
         <h3 id="m2t">Instalasi Starlink</h3>
@@ -595,7 +598,7 @@ html.modal-open{overflow:hidden}
   <div class="dlg">
     <button class="x" type="button" data-close aria-label="Tutup detail">&times;</button>
     <div class="m-top">
-      <div><div class="m-shot" data-shot></div><p class="m-photo">Slot foto lapangan asli — akan ditambahkan di Fase 2</p></div>
+      <div class="m-left"><img class="m-real" alt="Foto lapangan switch dan router" data-src="img/proyek-3.jpg"><div class="m-shot" data-shot></div><p class="m-photo">Belum ada foto lapangan. Letakkan berkas <b>img/proyek-3.jpg</b> untuk menampilkannya di sini.</p></div>
       <div>
         <p class="kicker">Selected Work · 03</p>
         <h3 id="m3t">Switch &amp; Router</h3>
@@ -619,7 +622,7 @@ html.modal-open{overflow:hidden}
   <div class="dlg">
     <button class="x" type="button" data-close aria-label="Tutup detail">&times;</button>
     <div class="m-top">
-      <div><div class="m-shot" data-shot></div><p class="m-photo">Slot foto lapangan asli — akan ditambahkan di Fase 2</p></div>
+      <div class="m-left"><img class="m-real" alt="Foto lapangan PVR dan digital signage" data-src="img/proyek-4.jpg"><div class="m-shot" data-shot></div><p class="m-photo">Belum ada foto lapangan. Letakkan berkas <b>img/proyek-4.jpg</b> untuk menampilkannya di sini.</p></div>
       <div>
         <p class="kicker">Selected Work · 04</p>
         <h3 id="m4t">PVR &amp; Digital Signage</h3>
@@ -643,7 +646,7 @@ html.modal-open{overflow:hidden}
   <div class="dlg">
     <button class="x" type="button" data-close aria-label="Tutup detail">&times;</button>
     <div class="m-top">
-      <div><div class="m-shot" data-shot></div><p class="m-photo">Slot foto lapangan asli — akan ditambahkan di Fase 2</p></div>
+      <div class="m-left"><img class="m-real" alt="Foto lapangan instalasi di lokasi SPPG" data-src="img/proyek-5.jpg"><div class="m-shot" data-shot></div><p class="m-photo">Belum ada foto lapangan. Letakkan berkas <b>img/proyek-5.jpg</b> untuk menampilkannya di sini.</p></div>
       <div>
         <p class="kicker">Selected Work · 05</p>
         <h3 id="m5t">6 Lokasi SPPG</h3>
@@ -667,7 +670,7 @@ html.modal-open{overflow:hidden}
   <div class="dlg">
     <button class="x" type="button" data-close aria-label="Tutup detail">&times;</button>
     <div class="m-top">
-      <div><div class="m-shot" data-shot></div><p class="m-photo">Slot foto lapangan asli — akan ditambahkan di Fase 2</p></div>
+      <div class="m-left"><img class="m-real" alt="Foto lapangan proyek CCTV" data-src="img/proyek-1.jpg"><div class="m-shot" data-shot></div><p class="m-photo">Belum ada foto lapangan. Letakkan berkas <b>img/proyek-1.jpg</b> untuk menampilkannya di sini.</p></div>
       <div>
         <p class="kicker">Selected Work · 01</p>
         <h3 id="m1t">CCTV ±260 Unit</h3>
@@ -709,6 +712,13 @@ html.modal-open{overflow:hidden}
       var card=document.querySelector('.card[data-open="'+id+'"]');
       var svg=card&&card.querySelector('svg');
       if(svg){var c=svg.cloneNode(true);c.removeAttribute('role');c.setAttribute('aria-hidden','true');shot.appendChild(c);}
+    }
+    var real=m.querySelector('.m-real[data-src]');
+    if(real&&!real.getAttribute('data-tried')){
+      real.setAttribute('data-tried','1');
+      var top=m.querySelector('.m-top'), probe=new Image();
+      probe.onload=function(){real.src=real.getAttribute('data-src'); top.classList.add('has-photo');};
+      probe.src=real.getAttribute('data-src');
     }
     m.classList.add('open'); root.classList.add('modal-open');
     current=m; opener=trigger||null;

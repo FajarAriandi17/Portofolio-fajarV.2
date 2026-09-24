@@ -102,6 +102,7 @@ Atau cukup buka `index.html` langsung di browser (tidak butuh server).
 .
 ├── index.html            # Seluruh situs: HTML + CSS + JS + font & foto ter-embed
 ├── cv.html               # CV siap-cetak (Simpan sebagai PDF lewat browser)
+├── img/                  # Foto: portrait.png (header CV) + proyek-1..5.jpg (slot modal) — lihat img/README.md
 ├── og-image.jpg          # Gambar pratinjau 1200×630 untuk media sosial
 ├── favicon.ico
 ├── apple-touch-icon.png
