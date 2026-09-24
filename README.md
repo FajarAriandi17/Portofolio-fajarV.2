@@ -35,6 +35,8 @@ Setiap `git push` ke `main` berikutnya akan otomatis memperbarui situs.
 | F7 | Selected Work: 5 kartu polaroid bernomor, animasi jatuh | ✅ |
 | F8 | Navigasi anchor + smooth scroll | ✅ |
 | F9 | Responsif desktop / tablet / mobile | ✅ |
+| F10 | Detail proyek: 5 kartu Selected Work bisa diklik → modal detail (aksesibel) | ✅ |
+| F11 | Tombol unduh CV + halaman `cv.html` siap-cetak (Simpan sebagai PDF) | ✅ |
 | — | Open Graph + Twitter Card + `og-image.jpg` | ✅ |
 | — | Favicon + apple-touch-icon | ✅ |
 | — | Structured data JSON-LD (`schema.org/Person`) | ✅ |
@@ -49,7 +51,8 @@ Setiap `git push` ke `main` berikutnya akan otomatis memperbarui situs.
 | `/#skill` | Skill & tools |
 | `/#pengalaman` | Riwayat pengalaman kerja |
 | `/#kontak` | Kontak & sosial media |
-| `/#karya` | Selected Work (5 kartu) |
+| `/#karya` | Selected Work (5 kartu, klik untuk detail) |
+| `/cv.html` | CV siap-cetak (tombol “Simpan sebagai PDF”) |
 | `/?static` | Mode tanpa animasi (untuk screenshot / pengujian) |
 | `/og-image.jpg` | Gambar pratinjau saat dibagikan |
 
@@ -57,9 +60,7 @@ Setiap `git push` ke `main` berikutnya akan otomatis memperbarui situs.
 
 | Kode | Fitur |
 |---|---|
-| F10 | Detail proyek (modal/halaman) dengan foto lapangan asli |
-| F11 | Tombol unduh CV (PDF) |
-| — | Ganti ilustrasi SVG kartu dengan foto proyek asli |
+| — | Ganti ilustrasi SVG kartu dengan foto proyek asli (slot foto sudah disiapkan di dalam modal) |
 | — | Domain kustom |
 | — | Verifikasi konten oleh pemilik (lihat bagian 13 PRD) |
 
@@ -67,8 +68,8 @@ Setiap `git push` ke `main` berikutnya akan otomatis memperbarui situs.
 
 1. Aktifkan GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / root** (sekali saja).
 2. Verifikasi poin di PRD bagian 13 — terutama apakah angka proyek (±260 CCTV, 53, 795, 6 lokasi) boleh dipublikasikan.
-3. Ganti ilustrasi SVG kartu Selected Work dengan foto lapangan asli agar lebih meyakinkan.
-4. Tambahkan tombol unduh CV PDF.
+3. Ganti ilustrasi SVG kartu Selected Work dengan foto lapangan asli agar lebih meyakinkan (slot foto sudah tersedia di dalam modal detail).
+4. Ganti isi `cv.html` bila ada CV terbaru, atau tetap pakai versi ini lalu “Simpan sebagai PDF”.
 5. Uji Lighthouse (target: Performance ≥ 90, Accessibility ≥ 95).
 
 ## Arsitektur data
@@ -100,6 +101,7 @@ Atau cukup buka `index.html` langsung di browser (tidak butuh server).
 ```
 .
 ├── index.html            # Seluruh situs: HTML + CSS + JS + font & foto ter-embed
+├── cv.html               # CV siap-cetak (Simpan sebagai PDF lewat browser)
 ├── og-image.jpg          # Gambar pratinjau 1200×630 untuk media sosial
 ├── favicon.ico
 ├── apple-touch-icon.png
