@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+*.log
+logs/
+.pm2/
+ecosystem.config.cjs
+*.tar.gz
+.env
+.github/
