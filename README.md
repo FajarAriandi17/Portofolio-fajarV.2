@@ -1,134 +1,515 @@
-# Portofolio — Muhammad Fajar Ariandi
+# 👨‍💻 Muhammad Fajar Ariandi — Personal Portfolio
 
-Website portofolio satu halaman bergaya **poster kertas sobek** yang memperkenalkan Fajar sebagai IT/Jaringan & Konten Kreator.
+<p align="center">
+  <strong>Network Technician • CCTV • Starlink • IT Support • Content Creator</strong>
+</p>
 
-- **Nama:** Muhammad Fajar Ariandi
-- **Peran:** Teknisi Jaringan, CCTV, Starlink · Konten Kreator (Canva, CapCut, Lightroom)
-- **Lokasi:** Tangerang, Indonesia
+<p align="center">
+  <a href="https://fajarariandi17.github.io/Portofolio-fajarV.2/">
+    <img src="https://img.shields.io/badge/🌐_Live_Portfolio-Visit_Website-4F46E5?style=for-the-badge" alt="Live Portfolio">
+  </a>
+  <a href="https://github.com/FajarAriandi17/Portofolio-fajarV.2">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub Repository">
+  </a>
+</p>
 
-## URL
-
-- **Produksi (GitHub Pages):** https://fajarariandi17.github.io/Portofolio-fajarV.2/
-- **Repositori:** https://github.com/FajarAriandi17/Portofolio-fajarV.2
-
-### Cara mengaktifkan (sekali saja, ~30 detik)
-
-1. Buka repo → **Settings** → **Pages**
-2. **Source:** pilih `Deploy from a branch`
-3. **Branch:** pilih `main`, folder `/ (root)` → **Save**
-4. Tunggu ±1 menit, situs langsung tayang di URL produksi di atas.
-
-Setiap `git push` ke `main` berikutnya akan otomatis memperbarui situs.
-
-## Fitur yang sudah selesai
-
-| Kode | Fitur | Status |
-|---|---|---|
-| F1 | Hero: judul PORTFOLIO raksasa, foto cutout menembus huruf, label profesi, navigasi | ✅ |
-| F2 | ID card + lanyard berayun (±1,2°, loop 6 s) | ✅ |
-| F3 | Tentang saya + kutipan ber-highlight tersapu | ✅ |
-| F4 | Skill & tools (8 ikon interaktif) | ✅ |
-| F5 | Pengalaman (5 entri, muncul berurutan) | ✅ |
-| F6 | Kontak: email, WhatsApp, lokasi (tautan aktif) | ✅ |
-| F6b | Sosial media: Instagram, TikTok, LinkedIn, GitHub | ✅ |
-| F6c | Foto full body cutout di bagian Tentang saya | ✅ |
-| F7 | Selected Work: 5 kartu polaroid bernomor, animasi jatuh | ✅ |
-| F8 | Navigasi anchor + smooth scroll | ✅ |
-| F9 | Responsif desktop / tablet / mobile | ✅ |
-| F10 | Detail proyek: 5 kartu Selected Work bisa diklik → modal detail (aksesibel) | ✅ |
-| F11 | Tombol unduh CV + halaman `cv.html` siap-cetak (Simpan sebagai PDF) | ✅ |
-| — | Open Graph + Twitter Card + `og-image.jpg` | ✅ |
-| — | Favicon + apple-touch-icon | ✅ |
-| — | Structured data JSON-LD (`schema.org/Person`) | ✅ |
-| — | `.nojekyll` agar Pages menyajikan berkas apa adanya | ✅ |
-
-## Entri fungsional (anchor)
-
-| Path | Bagian |
-|---|---|
-| `/` atau `/#top` | Hero (judul, foto, label profesi) |
-| `/#tentang` | Tentang saya + kutipan + foto full body |
-| `/#skill` | Skill & tools |
-| `/#pengalaman` | Riwayat pengalaman kerja |
-| `/#kontak` | Kontak & sosial media |
-| `/#karya` | Selected Work (5 kartu, klik untuk detail) |
-| `/cv.html` | CV siap-cetak (tombol “Simpan sebagai PDF”) |
-| `/?static` | Mode tanpa animasi (untuk screenshot / pengujian) |
-| `/og-image.jpg` | Gambar pratinjau saat dibagikan |
-
-## Belum dikerjakan (Fase 2)
-
-| Kode | Fitur |
-|---|---|
-| — | Ganti ilustrasi SVG kartu dengan foto proyek asli (slot foto sudah disiapkan di dalam modal) |
-| — | Domain kustom |
-| — | Verifikasi konten oleh pemilik (lihat bagian 13 PRD) |
-
-## Langkah berikutnya yang disarankan
-
-1. Aktifkan GitHub Pages: **Settings → Pages → Deploy from a branch → `main` / root** (sekali saja).
-2. Verifikasi poin di PRD bagian 13 — terutama apakah angka proyek (±260 CCTV, 53, 795, 6 lokasi) boleh dipublikasikan.
-3. Ganti ilustrasi SVG kartu Selected Work dengan foto lapangan asli agar lebih meyakinkan (slot foto sudah tersedia di dalam modal detail).
-4. Ganti isi `cv.html` bila ada CV terbaru, atau tetap pakai versi ini lalu “Simpan sebagai PDF”.
-5. Uji Lighthouse (target: Performance ≥ 90, Accessibility ≥ 95).
-
-## Arsitektur data
-
-- **Model data:** Tidak ada. Seluruh konten bersifat statis dan ditulis langsung di `index.html`.
-- **Layanan penyimpanan:** Tidak ada database. Tidak ada backend, tidak ada form yang mengirim data.
-- **Alur data:** Pengunjung memuat satu berkas HTML → font, foto, dan ikon sudah ter-*embed* sebagai data-URI → tidak ada permintaan jaringan tambahan. Kontak dilakukan lewat tautan keluar (`mailto:`, `wa.me`, sosial media).
-
-## Panduan pemakaian
-
-**Untuk pengunjung:** buka tautan produksi, gulir dari atas ke bawah, lalu klik tombol **Hubungi saya** atau ikon kontak di bagian Kontak.
-
-**Untuk pemilik (mengubah isi):**
-1. Buka `index.html` — seluruh konten ada di dalam `<body>`, terbagi jelas dengan komentar `<!-- HERO -->`, `<!-- ABOUT -->`, dst.
-2. Ubah teks langsung di HTML, simpan, lalu `git push`. Pages akan ter-deploy otomatis.
-3. Bila mengganti foto atau teks OG image, jalankan ulang:
-   ```bash
-   python3 tools/make_og.py
-   ```
-
-**Menjalankan lokal:**
-```bash
-npx serve . -l 3000     # lalu buka http://localhost:3000
-```
-Atau cukup buka `index.html` langsung di browser (tidak butuh server).
-
-## Struktur berkas
-
-```
-.
-├── index.html            # Seluruh situs: HTML + CSS + JS + font & foto ter-embed
-├── cv.html               # CV siap-cetak (Simpan sebagai PDF lewat browser)
-├── img/                  # Foto: portrait.png (header CV) + proyek-1..5.jpg (slot modal) — lihat img/README.md
-├── og-image.jpg          # Gambar pratinjau 1200×630 untuk media sosial
-├── favicon.ico
-├── apple-touch-icon.png
-├── tools/make_og.py      # Regenerasi og-image & favicon dari aset di index.html
-├── .nojekyll             # Nonaktifkan pemrosesan Jekyll di GitHub Pages
-├── PRD.md                # Dokumen kebutuhan produk
-└── README.md
-```
-
-## Aksesibilitas & performa
-
-- Satu `<h1>` dengan `aria-label`, tag semantik (`<header>`, `<nav>`, `<section>`, `<main>`)
-- Dekorasi bertanda `aria-hidden`, foto dan poster kartu punya `role="img"` + `aria-label`
-- Fokus keyboard terlihat (outline indigo 3 px)
-- Seluruh animasi mati bila `prefers-reduced-motion: reduce` aktif
-- Animasi hanya memakai `transform` dan `opacity` agar mulus di HP
-- Nol dependensi eksternal — tanpa CDN, tanpa Google Fonts, tanpa framework
-
-## Deployment
-
-- **Platform:** GitHub Pages (deploy dari branch `main`)
-- **Status:** ✅ Terunggah — tinggal aktifkan Pages di Settings
-- **Tech stack:** HTML + CSS + JavaScript murni, satu berkas, tanpa build
-- **Ukuran halaman:** ±1,2 MB (font & foto ter-embed, dimuat sekali lalu di-cache)
-- **Terakhir diperbarui:** 24 September 2026
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/GitHub%20Pages-222222?style=flat-square&logo=githubpages&logoColor=white">
+</p>
 
 ---
 
-© 2026 Muhammad Fajar Ariandi · Tangerang
+## 📌 About This Project
+
+**Portofolio-fajarV.2** adalah website portofolio personal milik **Muhammad Fajar Ariandi**, yang dirancang untuk menampilkan pengalaman profesional, keahlian teknis, project, layanan, serta informasi kontak dalam sebuah website yang modern dan responsif.
+
+Website ini dibuat dengan pendekatan **minimal dependency**, tanpa framework frontend maupun backend, sehingga ringan, mudah dipelihara, dan dapat langsung dijalankan melalui browser.
+
+Fokus profesional yang ditampilkan:
+
+* 🌐 Network Engineering
+* 📡 Instalasi & konfigurasi Starlink
+* 📹 CCTV Installation & Maintenance
+* 🖥️ IT Support & Technical Services
+* 🎨 Content Creation
+* 📱 Digital Content Design
+* 🎬 Video Editing
+
+---
+
+## 🌐 Live Website
+
+### 🚀 [Visit My Portfolio](https://fajarariandi17.github.io/Portofolio-fajarV.2/)
+
+Website di-deploy menggunakan **GitHub Pages**.
+
+Setiap perubahan yang di-push ke branch `main` dapat digunakan untuk memperbarui website secara otomatis melalui deployment GitHub Pages.
+
+---
+
+## ✨ Main Features
+
+### 🏠 Hero Section
+
+Landing section yang langsung memperkenalkan identitas dan bidang profesional dengan visual yang kuat.
+
+* Personal branding
+* Professional title
+* Profile image
+* Navigation menu
+* Responsive layout
+* Smooth scrolling
+
+### 👤 About Me
+
+Section khusus untuk memperkenalkan latar belakang dan fokus profesional.
+
+* Personal introduction
+* Professional quote
+* Full-body profile image
+* Personal branding
+
+### 🛠️ Skills & Tools
+
+Menampilkan berbagai kemampuan teknis dan tools yang digunakan dalam pekerjaan.
+
+Contoh kategori:
+
+* Networking
+* CCTV
+* Starlink
+* IT Support
+* Canva
+* CapCut
+* Lightroom
+* Digital Content
+
+### 💼 Professional Experience
+
+Riwayat pengalaman kerja ditampilkan dalam bentuk timeline/entry yang mudah dibaca.
+
+### 🎨 Selected Work
+
+Bagian project menggunakan konsep **polaroid cards** yang interaktif.
+
+Setiap project dapat:
+
+* Dibuka untuk melihat detail
+* Menampilkan informasi project
+* Menggunakan visual project
+* Menampilkan deskripsi pekerjaan
+
+### 📄 Digital CV
+
+Website menyediakan halaman CV khusus:
+
+```text
+/cv.html
+```
+
+CV dapat langsung dicetak atau disimpan sebagai PDF melalui browser.
+
+### 📱 Responsive Design
+
+Website dirancang agar dapat digunakan pada:
+
+* 🖥️ Desktop
+* 💻 Laptop
+* 📱 Smartphone
+* 📟 Tablet
+
+### ♿ Accessibility
+
+Beberapa perhatian aksesibilitas sudah diterapkan:
+
+* Semantic HTML
+* Visible keyboard focus
+* ARIA labels
+* Reduced motion support
+* Decorative elements menggunakan `aria-hidden`
+* Struktur heading yang jelas
+
+### 🔍 SEO & Social Sharing
+
+Website dilengkapi dengan:
+
+* Meta description
+* Open Graph
+* Twitter Card
+* Favicon
+* Apple Touch Icon
+* JSON-LD structured data
+* `schema.org/Person`
+* Social preview image
+
+---
+
+## 🎯 Project Highlights
+
+| Project       | Description                                     |
+| ------------- | ----------------------------------------------- |
+| 📹 CCTV       | Instalasi dan pekerjaan sistem CCTV             |
+| 📡 Starlink   | Instalasi dan konfigurasi konektivitas Starlink |
+| 🌐 Network    | Pekerjaan jaringan dan infrastruktur IT         |
+| 🎨 Content    | Desain dan pembuatan konten digital             |
+| 💻 IT Support | Dukungan teknis dan troubleshooting             |
+
+> Detail project dapat dilihat langsung melalui bagian **Selected Work** pada website portfolio.
+
+---
+
+## 🧰 Technology Stack
+
+### Frontend
+
+```text
+HTML5
+CSS3
+JavaScript
+```
+
+### Deployment
+
+```text
+GitHub Pages
+```
+
+### Development Tools
+
+```text
+Git
+GitHub
+VS Code
+Python
+```
+
+### Architecture
+
+```text
+Static Website
+No Backend
+No Database
+No Framework
+No External CDN
+```
+
+---
+
+## 🏗️ Project Architecture
+
+Website menggunakan arsitektur static website sederhana:
+
+```text
+Visitor
+   │
+   ▼
+GitHub Pages
+   │
+   ▼
+index.html
+   │
+   ├── HTML Structure
+   ├── CSS Styling
+   ├── JavaScript Interaction
+   ├── Embedded Assets
+   └── SEO Metadata
+```
+
+Tidak terdapat database atau backend.
+
+Kontak dilakukan melalui external links seperti:
+
+```text
+mailto:
+WhatsApp
+Instagram
+TikTok
+LinkedIn
+GitHub
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+Portofolio-fajarV.2/
+│
+├── 📄 index.html
+│   └── Main portfolio website
+│
+├── 📄 cv.html
+│   └── Printable CV
+│
+├── 📄 PRD.md
+│   └── Product Requirements Document
+│
+├── 📄 README.md
+│   └── Project documentation
+│
+├── 📁 img/
+│   ├── portrait.png
+│   └── project images
+│
+├── 📁 tools/
+│   └── make_og.py
+│
+├── 🖼️ og-image.jpg
+│   └── Social media preview image
+│
+├── 🖼️ favicon.ico
+│
+├── 🖼️ apple-touch-icon.png
+│
+└── 📄 .nojekyll
+```
+
+---
+
+## 🚀 Running Locally
+
+Karena project ini merupakan static website, kamu tidak membutuhkan Node.js, database, atau backend untuk menjalankannya.
+
+### Option 1 — Direct Browser
+
+Cukup buka:
+
+```text
+index.html
+```
+
+menggunakan browser.
+
+### Option 2 — Local Server
+
+Jika ingin menggunakan local server:
+
+```bash
+npx serve . -l 3000
+```
+
+Kemudian buka:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 🔧 Development Workflow
+
+Untuk melakukan perubahan:
+
+### 1. Clone repository
+
+```bash
+git clone https://github.com/FajarAriandi17/Portofolio-fajarV.2.git
+```
+
+### 2. Masuk ke folder
+
+```bash
+cd Portofolio-fajarV.2
+```
+
+### 3. Edit website
+
+File utama:
+
+```text
+index.html
+```
+
+### 4. Test website
+
+```bash
+npx serve . -l 3000
+```
+
+### 5. Commit perubahan
+
+```bash
+git add .
+git commit -m "Update portfolio"
+```
+
+### 6. Push ke GitHub
+
+```bash
+git push origin main
+```
+
+---
+
+## 📦 Deployment
+
+Project ini menggunakan **GitHub Pages**.
+
+Konfigurasi:
+
+```text
+Repository:
+FajarAriandi17/Portofolio-fajarV.2
+
+Branch:
+main
+
+Directory:
+/ (root)
+```
+
+Setelah repository terhubung dengan GitHub Pages, perubahan pada branch `main` dapat digunakan untuk memperbarui website.
+
+---
+
+## 🔗 Portfolio Sections
+
+| URL            | Section        |
+| -------------- | -------------- |
+| `/#top`        | Hero           |
+| `/#tentang`    | About Me       |
+| `/#skill`      | Skills & Tools |
+| `/#pengalaman` | Experience     |
+| `/#kontak`     | Contact        |
+| `/#karya`      | Selected Work  |
+| `/cv.html`     | Digital CV     |
+
+---
+
+## 📊 Performance & Accessibility
+
+Project ini dibuat dengan prinsip:
+
+* ⚡ Minimal dependencies
+* 🚫 No frontend framework
+* 🚫 No external CDN
+* 🚫 No database
+* 🚫 No backend
+* 📱 Responsive layout
+* ♿ Accessibility support
+* 🎞️ Reduced-motion support
+* 🔎 SEO metadata
+* 🧩 Semantic HTML
+
+Animasi juga menggunakan pendekatan yang lebih ringan dengan `transform` dan `opacity`.
+
+---
+
+## 🗺️ Roadmap
+
+### ✅ Version 2.0
+
+* [x] Personal portfolio
+* [x] Responsive design
+* [x] Professional experience
+* [x] Skills & tools
+* [x] Selected Work
+* [x] Project detail modal
+* [x] Digital CV
+* [x] Social media links
+* [x] SEO metadata
+* [x] Open Graph
+* [x] Structured data
+* [x] Accessibility improvements
+* [x] GitHub Pages support
+
+### 🔄 Future Improvements
+
+* [ ] Replace project illustrations with real project photos
+* [ ] Custom domain
+* [ ] Project gallery
+* [ ] More detailed case studies
+* [ ] Testimonials
+* [ ] Contact form
+* [ ] Analytics
+* [ ] Blog / Articles
+* [ ] Dark mode
+* [ ] Multilingual support
+* [ ] Automated deployment workflow
+
+---
+
+## 📸 Screenshots
+
+Tambahkan screenshot website di folder:
+
+```text
+img/
+```
+
+Kemudian tampilkan di README menggunakan:
+
+```markdown
+![Portfolio Preview](./img/portfolio-preview.png)
+```
+
+Contoh:
+
+```text
+┌─────────────────────────────────────────────┐
+│                                             │
+│          PORTFOLIO — FAJAR                  │
+│                                             │
+│      Network • CCTV • Starlink              │
+│                                             │
+│              [ View Work ]                  │
+│                                             │
+└─────────────────────────────────────────────┘
+```
+
+---
+
+## 👨‍💻 About Me
+
+**Muhammad Fajar Ariandi**
+
+📍 Tangerang, Indonesia
+
+Saya berfokus pada bidang:
+
+```text
+Network Engineering
+CCTV
+Starlink
+IT Support
+Technical Services
+Content Creation
+Digital Design
+```
+
+Saya tertarik pada teknologi, infrastruktur jaringan, sistem keamanan, konektivitas internet, serta pengembangan solusi digital yang praktis.
+
+---
+
+## 🤝 Let's Connect
+
+Jika kamu tertarik untuk bekerja sama, berdiskusi mengenai project, atau membutuhkan layanan teknis, silakan hubungi melalui portfolio saya.
+
+### 🌐 Portfolio
+
+**[fajarariandi17.github.io/Portofolio-fajarV.2](https://fajarariandi17.github.io/Portofolio-fajarV.2/)**
+
+### 💻 GitHub
+
+**[github.com/FajarAriandi17](https://github.com/FajarAriandi17)**
+
+---
+
+## 📄 License
+
+Project ini merupakan personal portfolio milik **Muhammad Fajar Ariandi**.
+
+Kode dan desain dibuat untuk kebutuhan personal portfolio.
+
+Jika ingin menggunakan bagian dari project ini untuk kebutuhan lain, silakan hubungi pemilik repository terlebih dahulu.
+
+---
+
+<p align="center">
+  <strong>Built with ❤️ by Muhammad Fajar Ariandi</strong>
+</p>
+
+<p align=
