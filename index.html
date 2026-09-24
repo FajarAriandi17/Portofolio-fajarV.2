@@ -286,6 +286,55 @@ nav.top a.cta:hover{transform:rotate(1deg) scale(1.05)}
 }
 html.static *,html.static *::before,html.static *::after{animation:none!important;transition:none!important}
 html.static .plane{opacity:1;offset-distance:56%}
+
+/* ---------- CTA CV BUTTON ---------- */
+.cta.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2.5px var(--ink);transform:rotate(1.5deg)}
+.cta.ghost:hover{transform:rotate(1.5deg) translateY(-2px) scale(1.04)}
+.contacts a.cvlink .ci{background:var(--indigo)}
+
+/* ---------- SELECTED WORK: DETAIL TRIGGER ---------- */
+.card[data-open]{cursor:pointer}
+.card[data-open]:focus-visible{outline:3px solid #e6ff5a;outline-offset:5px}
+.peek{margin:12px auto 0;display:inline-flex;align-items:center;gap:6px;font-family:"Patrick Hand";font-size:16px;color:var(--ink);background:var(--paper);border:0;padding:5px 14px 6px;border-radius:999px;transform:rotate(-1.5deg);box-shadow:0 4px 10px rgba(15,8,60,.35);cursor:pointer;transition:transform .25s}
+.item:nth-child(even) .peek{transform:rotate(2deg)}
+.peek:hover{transform:rotate(0) translateY(-2px) scale(1.05)}
+.peek:focus-visible{outline:3px solid #e6ff5a;outline-offset:3px}
+.peek svg{width:15px;height:15px;fill:none;stroke:var(--indigo);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- MODAL ---------- */
+.modal{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}
+.modal .veil{position:absolute;inset:0;background:rgba(21,17,46,.64);backdrop-filter:blur(3px)}
+.dlg{position:relative;background:var(--paper);width:min(760px,100%);max-height:88vh;overflow:auto;padding:30px 34px 34px;box-shadow:0 14px 0 -4px rgba(15,8,60,.3),0 28px 48px rgba(15,8,60,.5);border:3px solid var(--ink);border-radius:4px}
+.js .modal.open .dlg{animation:pop .5s cubic-bezier(.25,1.5,.45,1)}
+@keyframes pop{0%{opacity:0;transform:translateY(24px) rotate(-1.4deg) scale(.94)}100%{opacity:1;transform:none}}
+.dlg .x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:var(--ink);color:var(--paper);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 4px 10px rgba(15,8,60,.4);transition:transform .2s}
+.dlg .x:hover{transform:rotate(90deg) scale(1.08)}
+.dlg .x:focus-visible{outline:3px solid #e6ff5a;outline-offset:3px}
+.dlg .m-top{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:start}
+.m-shot{background:#1a1450;border-radius:6px;padding:8px;box-shadow:0 8px 18px rgba(15,8,60,.35);transform:rotate(-2deg)}
+.m-shot svg{display:block;width:100%;height:auto;border-radius:3px}
+.m-photo{margin-top:12px;font-family:"Patrick Hand";font-size:13px;color:#6b6880;text-align:center;background:repeating-linear-gradient(45deg,#efeadf 0 10px,#e6e0d2 10px 20px);border:2px dashed #c8c2b2;border-radius:6px;padding:14px 8px;line-height:1.25}
+.dlg .kicker{font-family:"Caveat Brush";font-size:22px;color:var(--indigo);line-height:1}
+.dlg h3{font-family:"Bowlby One";font-size:30px;line-height:1.02;color:var(--ink);margin:2px 0 8px;text-shadow:.03em .03em 0 #d9d2f7}
+.dlg .meta{font-family:"Patrick Hand";font-size:16px;color:#5b5872;margin-bottom:6px}
+.dlg .meta b{color:var(--indigo-2)}
+.dlg .lead{font-size:20px;line-height:1.45;margin:16px 0 4px;color:var(--ink)}
+.dlg h4{font-family:"Caveat Brush";font-size:24px;color:var(--indigo-2);margin:18px 0 6px}
+.dlg .did{list-style:none;padding:0;margin:0;display:grid;gap:7px}
+.dlg .did li{position:relative;padding-left:26px;font-size:18px;line-height:1.35}
+.dlg .did li::before{content:"";position:absolute;left:2px;top:9px;width:11px;height:11px;background:var(--indigo);border-radius:2px;transform:rotate(12deg)}
+.dlg .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.dlg .tags span{font-family:"Patrick Hand";font-size:15px;background:var(--lav);color:var(--indigo-2);padding:3px 12px 4px;border-radius:999px}
+html.modal-open{overflow:hidden}
+@media (max-width:640px){
+  .dlg{padding:24px 20px 28px}
+  .dlg .m-top{grid-template-columns:1fr}
+  .m-shot{width:170px;margin:0 auto}
+  .dlg h3{font-size:24px}
+}
+@media (prefers-reduced-motion:reduce){.js .modal.open .dlg{animation:none}}
+@media print{.peek,.modal{display:none!important}}
 </style>
 </head>
 <body>
@@ -304,6 +353,7 @@ html.static .plane{opacity:1;offset-distance:56%}
       <a class="l" href="#pengalaman">Pengalaman</a>
       <a class="l" href="#karya">Karya</a>
       <a class="cta" href="#kontak">Hubungi saya</a>
+      <a class="cta ghost" href="cv.html" target="_blank" rel="noopener">Unduh CV</a>
     </nav>
 
     <svg class="doodle d-ideas" viewBox="0 0 190 120" aria-hidden="true">
@@ -384,6 +434,7 @@ html.static .plane{opacity:1;offset-distance:56%}
           <li><a href="mailto:Fajarariandi669@gmail.com"><span class="ci" style="background:#fff;box-shadow:inset 0 0 0 2px #e6e2d6"><svg viewBox="0 0 24 24"><path d="M2 6l10 7 10-7v12H2z" fill="#ea4335"/><path d="M2 6l10 7 10-7" fill="none" stroke="#fff" stroke-width="1.6"/></svg></span><span>Fajarariandi669@gmail.com</span></a></li>
           <li><a href="https://wa.me/6288213400530" rel="noopener"><span class="ci" style="background:#25d366"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-7.7 13.6L3 21l4.5-1.2A9 9 0 1012 3z" fill="none" stroke="#fff" stroke-width="2"/><path d="M8.6 8.4c.3 3.4 3.1 6.2 6.6 6.8l1.3-1.5-2.2-1-.9.8a5 5 0 01-2.7-2.7l.8-.9-1-2.2z" fill="#fff"/></svg></span><span>+62 882 1340 0530</span></a></li>
           <li><a href="#top"><span class="ci" style="background:var(--ink)"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z" fill="#fff"/><circle cx="12" cy="9" r="2.6" fill="#15112e"/></svg></span><span>Tangerang, Indonesia</span></a></li>
+          <li><a class="cvlink" href="cv.html" target="_blank" rel="noopener"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h5M9.5 15.5h5"/></svg></span><span>Unduh CV (PDF)</span></a></li>
           <li class="sep sh" aria-hidden="true">Ikuti saya</li>
           <li><a href="https://www.instagram.com/fjrarndii_" target="_blank" rel="noopener noreferrer"><span class="ci ig"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="#fff" stroke="none"/></svg></span><span>@fjrarndii_</span></a></li>
           <li><a href="https://www.tiktok.com/@fajardev.ai" target="_blank" rel="noopener noreferrer"><span class="ci tk"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.2a3.4 3.4 0 11-3.4-3.4" stroke="#25f4ee" stroke-width="2.6" transform="translate(-1 0.6)"/><path d="M14 4v10.2a3.4 3.4 0 11-3.4-3.4" stroke="#fe2c55" stroke-width="2.6" transform="translate(1 -0.6)"/><path d="M14 4v10.2a3.4 3.4 0 11-3.4-3.4M14 4c.4 2.2 1.9 3.6 4.2 3.8" stroke="#fff" stroke-width="2.2"/></svg></span><span>@fajardev.ai</span></a></li>
@@ -408,7 +459,7 @@ html.static .plane{opacity:1;offset-distance:56%}
       <!-- 1 CCTV -->
       <div class="item" style="--nc:#f7f3e8">
         <span class="num" aria-hidden="true">1</span>
-        <div class="card" style="--r:-3deg;--i:0"><i class="tp"></i>
+        <div class="card" style="--r:-3deg;--i:0" data-open="m1" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="m1" aria-label="Lihat detail proyek: CCTV ±260 unit"><i class="tp"></i>
           <svg viewBox="0 0 180 230" role="img" aria-label="Poster proyek CCTV lebih dari 260 unit">
             <rect width="180" height="230" fill="#1a1450"/>
             <g stroke="#ffffff14" stroke-width="1"><path d="M0 46H180M0 92H180M0 138H180M0 184H180M45 0V230M90 0V230M135 0V230"/></g>
@@ -425,11 +476,12 @@ html.static .plane{opacity:1;offset-distance:56%}
           </svg>
         </div>
         <span class="cap">CCTV ±260 Unit<em>Staging &amp; instalasi</em></span>
+        <button class="peek" type="button" data-open="m1" aria-haspopup="dialog" aria-controls="m1">Lihat detail<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
       <!-- 2 Starlink -->
       <div class="item" style="--nc:#e6ff5a">
         <span class="num" aria-hidden="true">2</span>
-        <div class="card" style="--r:2.5deg;--i:1"><i class="tp" style="--tr:5deg"></i>
+        <div class="card" style="--r:2.5deg;--i:1" data-open="m2" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="m2" aria-label="Lihat detail proyek: Instalasi Starlink"><i class="tp" style="--tr:5deg"></i>
           <svg viewBox="0 0 180 230" role="img" aria-label="Poster instalasi Starlink">
             <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fc9ff"/><stop offset="1" stop-color="#eaf7ff"/></linearGradient></defs>
             <rect width="180" height="230" fill="url(#sky)"/>
@@ -442,11 +494,12 @@ html.static .plane{opacity:1;offset-distance:56%}
           </svg>
         </div>
         <span class="cap">Instalasi Starlink<em>PT. Fiber Star</em></span>
+        <button class="peek" type="button" data-open="m2" aria-haspopup="dialog" aria-controls="m2">Lihat detail<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
       <!-- 3 Switch & Router -->
       <div class="item" style="--nc:#ffb14a">
         <span class="num" aria-hidden="true">3</span>
-        <div class="card" style="--r:-1.5deg;--i:2"><i class="tp" style="--tr:-8deg"></i>
+        <div class="card" style="--r:-1.5deg;--i:2" data-open="m3" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="m3" aria-label="Lihat detail proyek: Switch dan Router"><i class="tp" style="--tr:-8deg"></i>
           <svg viewBox="0 0 180 230" role="img" aria-label="Poster 53 switch dan 53 router">
             <rect width="180" height="230" fill="#ffd84d"/>
             <circle cx="150" cy="30" r="60" fill="#ffc21a"/>
@@ -463,11 +516,12 @@ html.static .plane{opacity:1;offset-distance:56%}
           </svg>
         </div>
         <span class="cap">Switch &amp; Router<em>53 unit masing-masing</em></span>
+        <button class="peek" type="button" data-open="m3" aria-haspopup="dialog" aria-controls="m3">Lihat detail<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
       <!-- 4 PVR & Signage -->
       <div class="item" style="--nc:#ff5c6c">
         <span class="num" aria-hidden="true">4</span>
-        <div class="card" style="--r:3deg;--i:3"><i class="tp" style="--tr:3deg"></i>
+        <div class="card" style="--r:3deg;--i:3" data-open="m4" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="m4" aria-label="Lihat detail proyek: PVR dan Digital Signage"><i class="tp" style="--tr:3deg"></i>
           <svg viewBox="0 0 180 230" role="img" aria-label="Poster 795 PVR sekolah dan 53 digital signage">
             <rect width="180" height="230" fill="#ff8fb8"/>
             <path d="M0 200 Q45 170 90 196 T180 180 V230 H0Z" fill="#ff6fa3"/>
@@ -481,11 +535,12 @@ html.static .plane{opacity:1;offset-distance:56%}
           </svg>
         </div>
         <span class="cap">PVR &amp; Digital Signage<em>Dapur &amp; sekolah</em></span>
+        <button class="peek" type="button" data-open="m4" aria-haspopup="dialog" aria-controls="m4">Lihat detail<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
       <!-- 5 SPPG -->
       <div class="item" style="--nc:#a78bff">
         <span class="num" aria-hidden="true">5</span>
-        <div class="card" style="--r:-2.5deg;--i:4"><i class="tp" style="--tr:-3deg"></i>
+        <div class="card" style="--r:-2.5deg;--i:4" data-open="m5" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="m5" aria-label="Lihat detail proyek: 6 lokasi SPPG"><i class="tp" style="--tr:-3deg"></i>
           <svg viewBox="0 0 180 230" role="img" aria-label="Poster instalasi di 6 lokasi SPPG">
             <rect width="180" height="230" fill="#7ee8c0"/>
             <g stroke="#ffffff88" stroke-width="2" fill="none"><path d="M0 60 Q60 40 100 70 T180 50M0 170 Q70 150 110 178 T180 160M40 0 Q60 80 30 230M130 0 Q110 90 150 230"/></g>
@@ -498,6 +553,7 @@ html.static .plane{opacity:1;offset-distance:56%}
           </svg>
         </div>
         <span class="cap">6 Lokasi SPPG<em>Tarik kabel &amp; crimping</em></span>
+        <button class="peek" type="button" data-open="m5" aria-haspopup="dialog" aria-controls="m5">Lihat detail<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </div>
     </div>
 
@@ -508,6 +564,128 @@ html.static .plane{opacity:1;offset-distance:56%}
     <p class="copy">© 2026 Muhammad Fajar Ariandi · Tangerang</p>
   </div>
 </section>
+
+<!-- ================= PROJECT DETAIL MODALS ================= -->
+<div class="modal" id="m2" role="dialog" aria-modal="true" aria-labelledby="m2t">
+  <div class="veil" data-close></div>
+  <div class="dlg">
+    <button class="x" type="button" data-close aria-label="Tutup detail">&times;</button>
+    <div class="m-top">
+      <div><div class="m-shot" data-shot></div><p class="m-photo">Slot foto lapangan asli — akan ditambahkan di Fase 2</p></div>
+      <div>
+        <p class="kicker">Selected Work · 02</p>
+        <h3 id="m2t">Instalasi Starlink</h3>
+        <p class="meta"><b>PT. Fiber Star</b> · Jakarta Selatan</p>
+        <p class="meta">Feb 2024 – Agu 2024 · Teknisi Instalasi Starlink</p>
+      </div>
+    </div>
+    <p class="lead">Sebagai teknisi instalasi Starlink, memasang perangkat dari titik nol hingga internet siap pakai, lengkap dengan pengujian kecepatan dan serah terima ke pelanggan.</p>
+    <h4>Yang saya kerjakan</h4>
+    <ul class="did">
+      <li>Survey titik pasang dan orientasi dish untuk sinyal terbaik</li>
+      <li>Pemasangan dish, penarikan kabel, dan setup router</li>
+      <li>Aktivasi dan pengecekan koneksi</li>
+      <li>Speed test dan serah terima ke pelanggan</li>
+    </ul>
+    <div class="tags"><span>Starlink</span><span>Instalasi</span><span>Alignment</span><span>Speed test</span><span>Fiber Star</span></div>
+  </div>
+</div>
+<div class="modal" id="m3" role="dialog" aria-modal="true" aria-labelledby="m3t">
+  <div class="veil" data-close></div>
+  <div class="dlg">
+    <button class="x" type="button" data-close aria-label="Tutup detail">&times;</button>
+    <div class="m-top">
+      <div><div class="m-shot" data-shot></div><p class="m-photo">Slot foto lapangan asli — akan ditambahkan di Fase 2</p></div>
+      <div>
+        <p class="kicker">Selected Work · 03</p>
+        <h3 id="m3t">Switch &amp; Router</h3>
+        <p class="meta"><b>Project IoT BGN – PERURI</b> · Karawang</p>
+        <p class="meta">Nov 2025 – Jan 2026 · Field Installation &amp; Tim Staging</p>
+      </div>
+    </div>
+    <p class="lead">Menyiapkan dan memasang 53 unit switch serta 53 unit router sebagai tulang punggung jaringan di proyek IoT BGN–PERURI.</p>
+    <h4>Yang saya kerjakan</h4>
+    <ul class="did">
+      <li>Staging perangkat dan pembaruan konfigurasi</li>
+      <li>Pelabelan port dan kabel agar rapi dan mudah dirawat</li>
+      <li>Pemasangan di rak dan lokasi</li>
+      <li>Uji konektivitas antar perangkat</li>
+    </ul>
+    <div class="tags"><span>Switch</span><span>Router</span><span>Mikrotik</span><span>Jaringan</span><span>Staging</span></div>
+  </div>
+</div>
+<div class="modal" id="m4" role="dialog" aria-modal="true" aria-labelledby="m4t">
+  <div class="veil" data-close></div>
+  <div class="dlg">
+    <button class="x" type="button" data-close aria-label="Tutup detail">&times;</button>
+    <div class="m-top">
+      <div><div class="m-shot" data-shot></div><p class="m-photo">Slot foto lapangan asli — akan ditambahkan di Fase 2</p></div>
+      <div>
+        <p class="kicker">Selected Work · 04</p>
+        <h3 id="m4t">PVR &amp; Digital Signage</h3>
+        <p class="meta"><b>Project IoT BGN – PERURI</b> · Karawang</p>
+        <p class="meta">Nov 2025 – Jan 2026 · Field Installation &amp; Tim Staging</p>
+      </div>
+    </div>
+    <p class="lead">Instalasi 795 unit PVR untuk sekolah dan 53 unit digital signage sebagai bagian dari penyebaran perangkat IoT BGN–PERURI.</p>
+    <h4>Yang saya kerjakan</h4>
+    <ul class="did">
+      <li>Pemasangan dan konfigurasi tiap unit PVR</li>
+      <li>Setup digital signage dan tampilannya</li>
+      <li>Pengujian tiap unit sebelum serah terima</li>
+      <li>Dokumentasi jumlah dan lokasi perangkat</li>
+    </ul>
+    <div class="tags"><span>PVR</span><span>Digital Signage</span><span>Instalasi massal</span><span>Sekolah</span><span>IoT</span></div>
+  </div>
+</div>
+<div class="modal" id="m5" role="dialog" aria-modal="true" aria-labelledby="m5t">
+  <div class="veil" data-close></div>
+  <div class="dlg">
+    <button class="x" type="button" data-close aria-label="Tutup detail">&times;</button>
+    <div class="m-top">
+      <div><div class="m-shot" data-shot></div><p class="m-photo">Slot foto lapangan asli — akan ditambahkan di Fase 2</p></div>
+      <div>
+        <p class="kicker">Selected Work · 05</p>
+        <h3 id="m5t">6 Lokasi SPPG</h3>
+        <p class="meta"><b>Project IoT BGN – PERURI</b> · Karawang</p>
+        <p class="meta">Nov 2025 – Jan 2026 · Field Installation &amp; Tim Staging</p>
+      </div>
+    </div>
+    <p class="lead">Penarikan kabel LAN dan terminasi RJ-45 di 6 lokasi SPPG untuk mendukung jaringan lokal yang stabil.</p>
+    <h4>Yang saya kerjakan</h4>
+    <ul class="did">
+      <li>Survey jalur kabel tiap lokasi</li>
+      <li>Penarikan dan perapian kabel LAN</li>
+      <li>Crimping dan terminasi konektor RJ-45</li>
+      <li>Uji koneksi tiap titik</li>
+    </ul>
+    <div class="tags"><span>LAN</span><span>Crimping RJ-45</span><span>Kabel UTP</span><span>6 lokasi</span><span>SPPG</span></div>
+  </div>
+</div>
+<div class="modal" id="m1" role="dialog" aria-modal="true" aria-labelledby="m1t">
+  <div class="veil" data-close></div>
+  <div class="dlg">
+    <button class="x" type="button" data-close aria-label="Tutup detail">&times;</button>
+    <div class="m-top">
+      <div><div class="m-shot" data-shot></div><p class="m-photo">Slot foto lapangan asli — akan ditambahkan di Fase 2</p></div>
+      <div>
+        <p class="kicker">Selected Work · 01</p>
+        <h3 id="m1t">CCTV ±260 Unit</h3>
+        <p class="meta"><b>Project IoT BGN – PERURI</b> · Karawang</p>
+        <p class="meta">Nov 2025 – Jan 2026 · Field Installation &amp; Tim Staging</p>
+      </div>
+    </div>
+    <p class="lead">Bagian dari tim staging dan instalasi proyek IoT BGN–PERURI. Menyiapkan serta memasang lebih dari 260 unit CCTV merek Hiview &amp; Skyview — dari konfigurasi awal sampai kamera aktif dan merekam.</p>
+    <h4>Yang saya kerjakan</h4>
+    <ul class="did">
+      <li>Staging dan pelabelan perangkat sebelum dikirim ke lokasi</li>
+      <li>Konfigurasi IP dan DHCP tiap kamera</li>
+      <li>Pemasangan serta pengarahan kamera di titik lapangan</li>
+      <li>Uji rekaman dan koneksi ke perangkat perekam</li>
+    </ul>
+    <div class="tags"><span>CCTV Hiview</span><span>CCTV Skyview</span><span>Konfigurasi DHCP</span><span>Staging</span><span>Instalasi lapangan</span></div>
+  </div>
+</div>
 </main>
 
 <script>
@@ -518,6 +696,47 @@ html.static .plane{opacity:1;offset-distance:56%}
   if(d.classList.contains('static')||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
   var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.25});
   els.forEach(function(e){io.observe(e)});
+})();
+
+/* ---------- PROJECT DETAIL MODALS ---------- */
+(function(){
+  var root=document.documentElement, current=null, opener=null;
+  function focusables(el){return el.querySelectorAll('button,[href],[tabindex]:not([tabindex="-1"])');}
+  function open(id,trigger){
+    var m=document.getElementById(id); if(!m) return;
+    var shot=m.querySelector('[data-shot]');
+    if(shot&&!shot.hasChildNodes()){
+      var card=document.querySelector('.card[data-open="'+id+'"]');
+      var svg=card&&card.querySelector('svg');
+      if(svg){var c=svg.cloneNode(true);c.removeAttribute('role');c.setAttribute('aria-hidden','true');shot.appendChild(c);}
+    }
+    m.classList.add('open'); root.classList.add('modal-open');
+    current=m; opener=trigger||null;
+    var f=focusables(m); (f[0]||m.querySelector('.dlg')).focus();
+  }
+  function close(){
+    if(!current) return;
+    current.classList.remove('open'); root.classList.remove('modal-open');
+    if(opener&&opener.focus) opener.focus();
+    current=null; opener=null;
+  }
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-open]');
+    if(t){e.preventDefault(); open(t.getAttribute('data-open'),t); return;}
+    if(e.target.closest('[data-close]')) close();
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target.closest&&e.target.closest('.card[data-open]');
+    if(t&&(e.key==='Enter'||e.key===' ')){e.preventDefault(); open(t.getAttribute('data-open'),t); return;}
+    if(!current) return;
+    if(e.key==='Escape'){e.preventDefault(); close(); return;}
+    if(e.key==='Tab'){
+      var f=focusables(current); if(!f.length) return;
+      var first=f[0], last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault(); last.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault(); first.focus();}
+    }
+  });
 })();
 </script>
 </body>
