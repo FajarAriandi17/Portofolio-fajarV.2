@@ -67,10 +67,14 @@ Landing section yang langsung memperkenalkan identitas dan bidang profesional de
 
 Section khusus untuk memperkenalkan latar belakang dan fokus profesional.
 
-* Personal introduction
-* Professional quote
-* Full-body profile image
-* Personal branding
+* Personal introduction dengan animasi **kata-per-kata** (fade + blur-in)
+* Sorotan kata kunci (stabilo lime, garis gelombang) & tag tools **Canva / CapCut / Lightroom**
+* Badge status **"Siap bekerja · Tangerang"** dengan titik hijau berdenyut
+* Mini-timeline **SMK Otomotif → Teknisi Jaringan & CCTV → Konten Kreator** dengan konektor animasi
+* Catatan tempel (sticky notes): Tepat waktu, Disiplin, Kerja tim, Mandiri — jatuh & bergoyang saat hover
+* Motto dengan tanda kutip besar + lingkaran coretan tangan pada kata *jalan* & *terlihat*
+* Foto full-body melayang + balon sapaan "Halo! 👋"
+* Mendukung `prefers-reduced-motion` dan mode `?static`
 
 ### 🛠️ Skills & Tools
 
@@ -432,6 +436,15 @@ Animasi juga menggunakan pendekatan yang lebih ringan dengan `transform` dan `op
 * [x] `cv.html` diperbarui dengan poin tugas per pekerjaan
 * [x] Credit pemilik di footer
 * [x] Perbaikan bug: nama `@keyframes pop` bentrok antara foto hero & modal
+
+### ✅ Version 2.2 (30 Sep 2026)
+
+* [x] Redesain section **Tentang saya**: status badge, highlight kata kunci, tag tools
+* [x] Animasi teks bio per kata, garis bawah judul & panah tergambar otomatis
+* [x] Mini-timeline perjalanan (3 kartu) + sticky notes karakter kerja
+* [x] Motto dengan lingkaran coretan tangan beranimasi
+* [x] Foto melayang, balon "Halo! 👋", parallax mouse pada doodle
+* [x] Layout responsif desktop / tablet / mobile & aksesibilitas reduced-motion
 
 ### 🔄 Future Improvements
 
