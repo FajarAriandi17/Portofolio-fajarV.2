@@ -559,6 +559,14 @@ html.static .js .chip,html.static .chip{opacity:1}
   .js .journey li + li::before{transform:none}
   .full-wrap,.bubble,.status i,.about .d-star2{animation:none!important}
 }
+/* ---------- v2.3: LANGUAGE SWITCH ---------- */
+.lang-switch{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;margin:48px auto 0;padding:14px 20px;max-width:max-content;background:var(--paper);border:3px solid var(--ink);border-radius:999px;box-shadow:5px 5px 0 var(--deep);transform:rotate(-1deg)}
+.lang-lbl{font-family:"Caveat Brush";font-size:24px;color:var(--indigo-2);padding:0 4px}
+.lang-switch button{font-family:"Patrick Hand",sans-serif;font-size:19px;cursor:pointer;border:2px solid var(--ink);background:#fff;color:var(--ink);padding:5px 16px 6px;border-radius:999px;transition:transform .25s cubic-bezier(.3,1.7,.5,1),background .2s,box-shadow .2s}
+.lang-switch button:hover{transform:translateY(-3px) rotate(-2deg)}
+.lang-switch button.on{background:var(--lime);box-shadow:3px 3px 0 var(--ink)}
+.lang-switch button:focus-visible{outline:3px solid #e6ff5a;outline-offset:3px}
+@media (max-width:760px){.lang-switch{border-radius:22px;transform:none}.lang-lbl{width:100%;text-align:center}}
 </style>
 </head>
 <body>
@@ -622,7 +630,7 @@ html.static .js .chip,html.static .chip{opacity:1}
           <svg class="arrow" viewBox="0 0 46 44" aria-hidden="true"><path d="M4 6 C 26 0, 42 16, 30 32 M30 32 L26 22 M30 32 L40 28"/></svg>
           <span class="status"><i aria-hidden="true"></i>Siap bekerja · Tangerang</span>
         </div>
-        <p class="bio" data-reveal data-split>Halo! Saya <b class="hl">Fajar</b>, lulusan <span class="u">SMK Otomotif</span> yang berkembang jadi <b class="hl">teknisi jaringan dan CCTV</b> di lapangan. Saya biasa menarik kabel LAN, mengonfigurasi router dan Mikrotik, memasang Starlink, lalu merapikan hasilnya menjadi konten lewat <span class="tool" style="--c:#a78bff">Canva</span>, <span class="tool" style="--c:#15112e;--t:#fff">CapCut</span>, dan <span class="tool" style="--c:#5ec8ff">Lightroom</span>. Disiplin, tepat waktu, dan senang bekerja tim maupun sendiri.</p>
+        <p class="bio" data-reveal data-split data-i18n-html="bio">Halo, saya <b class="hl">Fajar</b>. Saya memulai dari <span class="u">bengkel otomotif</span>, lalu menemukan dunia yang lebih saya suka: <b class="hl">jaringan dan CCTV</b> di lapangan. Saya biasa menarik kabel, mengonfigurasi Mikrotik, memasang Starlink, dan memastikan semuanya online sebelum serah terima. Hasil kerjanya saya rapikan menjadi konten visual lewat <span class="tool" style="--c:#a78bff">Canva</span>, <span class="tool" style="--c:#15112e;--t:#fff">CapCut</span>, dan <span class="tool" style="--c:#5ec8ff">Lightroom</span>.</p>
 
         <ol class="journey" data-reveal aria-label="Perjalanan singkat">
           <li style="--i:0"><span class="jic" aria-hidden="true">🔧</span><b>SMK Otomotif</b><small>2019 – 2021</small></li>
@@ -639,7 +647,7 @@ html.static .js .chip,html.static .chip{opacity:1}
 
         <blockquote class="motto">
           <span class="qm" aria-hidden="true">&ldquo;</span>
-          <p class="mark">Jaringan yang stabil membuat semuanya <em class="circ">jalan<svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M8 28 C 6 8, 104 2, 112 22 C 118 42, 30 48, 12 36 C 4 30, 14 14, 40 10"/></svg></em>, konten yang rapi membuatnya <em class="circ">terlihat<svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M8 28 C 6 8, 104 2, 112 22 C 118 42, 30 48, 12 36 C 4 30, 14 14, 40 10"/></svg></em>.</p>
+          <p class="mark" data-i18n-html="motto">Bagi saya, jaringan yang stabil membuat semuanya <em class="circ">berjalan<svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M8 28 C 6 8, 104 2, 112 22 C 118 42, 30 48, 12 36 C 4 30, 14 14, 40 10"/></svg></em>, dan tampilan yang rapi membuatnya <em class="circ">mudah dipahami<svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M8 28 C 6 8, 104 2, 112 22 C 118 42, 30 48, 12 36 C 4 30, 14 14, 40 10"/></svg></em>.</p>
         </blockquote>
         <div class="full-wrap" aria-hidden="false"><div class="full" data-reveal role="img" aria-label="Foto Fajar berdiri di zebra cross"></div><span class="bubble" aria-hidden="true">Halo! 👋</span></div>
         <svg class="d-star2" viewBox="0 0 90 90" aria-hidden="true"><path d="M45 4 L52 36 L86 20 L58 44 L76 78 L45 54 L14 78 L32 44 L4 20 L38 36 Z" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linejoin="round"/><path d="M45 4 L45 54 M4 20 L58 44" stroke="var(--ink)" stroke-width="1.6"/></svg>
@@ -708,8 +716,8 @@ html.static .js .chip,html.static .chip{opacity:1}
       <li style="--i:0"><b data-count="260" data-prefix="±">±260</b><span>unit CCTV di-staging &amp; dipasang</span></li>
       <li style="--i:1"><b data-count="795">795</b><span>PVR sekolah dikonfigurasi</span></li>
       <li style="--i:2"><b data-count="159">159</b><span>switch, router &amp; POP (53 × 3)</span></li>
-      <li style="--i:3"><b data-count="800" data-suffix="/hari">800/hari</b><span>paket disortir di gudang J&amp;T</span></li>
-      <li style="--i:4"><b data-count="4" data-suffix="+ th">4+ th</b><span>pengalaman kerja lapangan</span></li>
+      <li style="--i:3"><b data-count="800" data-suffix="/hari" data-suffix-en="/day">800/hari</b><span>paket disortir di gudang J&amp;T</span></li>
+      <li style="--i:4"><b data-count="4" data-suffix="+ th" data-suffix-en="+ yrs">4+ th</b><span>pengalaman kerja lapangan</span></li>
     </ul>
   </div>
 </section>
@@ -922,6 +930,11 @@ html.static .js .chip,html.static .chip{opacity:1}
       <p class="note" style="position:relative">Ayo buat sesuatu yang keren bersama!</p>
       <p class="note r" style="position:relative"><a href="mailto:Fajarariandi669@gmail.com">Terima kasih sudah berkunjung!</a><svg class="clipicon" viewBox="0 0 22 50" aria-hidden="true"><path d="M8 40 V12 a5 5 0 0110 0 V40 a8 8 0 01-16 0 V14"/></svg></p>
     </div>
+    <section class="lang-switch" aria-label="Pilih bahasa">
+      <span class="lang-lbl">🌐 Bahasa</span>
+      <button type="button" data-lang="id" aria-pressed="true" class="on"><span aria-hidden="true">🇮🇩</span> Bahasa Indonesia</button>
+      <button type="button" data-lang="en" aria-pressed="false"><span aria-hidden="true">🇬🇧</span> English</button>
+    </section>
     <p class="copy">© 2026 Muhammad Fajar Ariandi · Tangerang, Indonesia<br><span class="credit">Desain, konten &amp; foto: <b>Muhammad Fajar Ariandi</b> · Dibangun dengan HTML, CSS &amp; JavaScript · Di-host di <a href="https://github.com/FajarAriandi17/Portofolio-fajarV.2" target="_blank" rel="noopener">GitHub Pages</a></span></p>
   </div>
 </section>
@@ -1148,7 +1161,7 @@ html.static .js .chip,html.static .chip{opacity:1}
 /* ---------- v2.2: ABOUT — pecah bio per kata + parallax ---------- */
 (function(){
   var d=document.documentElement;
-  document.querySelectorAll('[data-split]').forEach(function(p){
+  function splitWords(p){
     var i=0, nodes=[].slice.call(p.childNodes);
     nodes.forEach(function(n){
       if(n.nodeType===3){
@@ -1163,7 +1176,9 @@ html.static .js .chip,html.static .chip{opacity:1}
         var w=document.createElement('span');w.className='w';w.style.setProperty('--wi',i++);p.replaceChild(w,n);w.appendChild(n);
       }
     });
-  });
+  }
+  window.__splitWords=splitWords;
+  document.querySelectorAll('[data-split]').forEach(function(p){p.setAttribute('data-id-html',p.innerHTML);splitWords(p);});
   var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches||d.classList.contains('static');
   var about=document.querySelector('.about');
   if(about&&!reduce&&matchMedia('(pointer:fine)').matches){
@@ -1175,6 +1190,155 @@ html.static .js .chip,html.static .chip{opacity:1}
       notes.forEach(function(n,k){n.style.setProperty('--px',(x*(4+k*2))+'px');});
     });
   }
+})();
+
+/* ---------- v2.3: BAHASA INDONESIA / ENGLISH ---------- */
+(function(){
+  var d=document.documentElement;
+  var C='<svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M8 28 C 6 8, 104 2, 112 22 C 118 42, 30 48, 12 36 C 4 30, 14 14, 40 10"/></svg>';
+  var T='<span class="tool" style="--c:#a78bff">Canva</span>, <span class="tool" style="--c:#15112e;--t:#fff">CapCut</span>';
+  var HTML_EN={
+    bio:'Hi, I\u2019m <b class="hl">Fajar</b>. I started out in an <span class="u">automotive workshop</span>, then found a world I enjoy more: <b class="hl">networking and CCTV</b> in the field. I pull cables, configure Mikrotik, install Starlink, and make sure everything is online before handover. I then turn the work into visual content with '+T+', and <span class="tool" style="--c:#5ec8ff">Lightroom</span>.',
+    motto:'To me, a stable network keeps everything <em class="circ">running'+C+'</em>, and a clean presentation makes it <em class="circ">easy to understand'+C+'</em>.'
+  };
+  var EN={
+    'Tentang':'About','Keahlian':'Expertise','Pengalaman':'Experience','Karya':'Work','Hubungi saya':'Contact me','Unduh CV':'Download CV',
+    'koneksi':'connect','kreasi':'create','konten':'content',
+    'JARINGAN • CCTV • STARLINK • IoT • KONTEN •':'NETWORK • CCTV • STARLINK • IoT • CONTENT •',
+    'CCTV terpasang':'CCTV installed','PVR sekolah':'school PVRs','IT / JARINGAN':'IT / NETWORK','& KONTEN KREATOR':'& CONTENT CREATOR',
+    'Tentang saya':'About me','Siap bekerja · Tangerang':'Open to work · Tangerang',
+    'Teknisi Jaringan & CCTV':'Network & CCTV Technician','Konten Kreator':'Content Creator',
+    '⏱️ Tepat waktu':'⏱️ Punctual','🎯 Disiplin':'🎯 Disciplined','🤝 Kerja tim':'🤝 Team player','🧭 Mandiri':'🧭 Independent',
+    'Halo! 👋':'Hi! 👋',
+    'Juga: crimping UTP/RJ-45, konfigurasi DHCP CCTV, instalasi Windows. Bahasa Inggris pasif.':'Also: UTP/RJ-45 crimping, CCTV DHCP configuration, Windows installation. Passive English.',
+    'Komputer & Jaringan':'Computers & Networking','Instalasi Lapangan':'Field Installation','Editing Konten':'Content Editing',
+    'Dasar Pemrograman':'Programming Basics','Bahasa Inggris':'English','Pasif':'Passive',
+    'Jurusan Otomotif · 2019 – 2021':'Automotive Major · 2019 – 2021',
+    'Kontak':'Contact','Unduh CV (PDF)':'Download CV (PDF)','Ikuti saya':'Follow me',
+    'unit CCTV di-staging & dipasang':'CCTV units staged & installed','PVR sekolah dikonfigurasi':'school PVRs configured',
+    'paket disortir di gudang J&T':'parcels sorted at J&T warehouse','pengalaman kerja lapangan':'field work experience',
+    'Perjalanan karier':'Career journey',
+    'Dari gudang, jalanan, sampai atap gedung — setiap pekerjaan mengajarkan ketelitian, ketepatan waktu, dan tanggung jawab.':'From warehouses and streets to rooftops — every job has taught me precision, punctuality, and responsibility.',
+    'Nov 2025 – Jan 2026':'Nov 2025 – Jan 2026','Terbaru':'Latest','Field Installation & Tim Staging':'Field Installation & Staging Team',
+    'Terlibat dalam proses staging, konfigurasi, dan instalasi perangkat untuk mendukung infrastruktur jaringan di beberapa lokasi, sesuai standar operasional proyek.':'Involved in staging, configuring, and installing devices to support network infrastructure across several sites, following the project\u2019s operating standards.',
+    'Staging, konfigurasi & instalasi':'Staging, configuration & installation of','(Hiview & Skyview) bersama tim proyek':'(Hiview & Skyview) with the project team',
+    'Konfigurasi & pemasangan':'Configuration & installation of','dan':'and',
+    'Instalasi & konfigurasi':'Installation & configuration of','untuk kebutuhan dapur dan sekolah':'for kitchens and schools',
+    'Instalasi di':'Installation at','6 lokasi SPPG':'6 SPPG sites','dengan tantangan teknis lapangan & penyesuaian infrastruktur eksisting':'with on-site technical challenges & adaptation to existing infrastructure',
+    'Penarikan kabel LAN & crimping RJ-45 agar konektivitas stabil dan terintegrasi':'LAN cable pulling & RJ-45 crimping for stable, integrated connectivity',
+    'Uji konektivitas & troubleshooting awal sebelum serah terima':'Connectivity testing & initial troubleshooting before handover',
+    'Sep 2024 – Mei 2025':'Sep 2024 – May 2025',
+    'Mengantarkan paket kargo sesuai alamat tujuan':'Delivered cargo packages to their destination addresses',
+    'Menjaga keamanan barang selama perjalanan':'Kept goods safe during transit','Mengelola':'Handled','3–5 pengiriman':'3–5 deliveries',
+    'setiap hari dengan tepat waktu':'every day, on time','Logistik':'Logistics','Ketepatan waktu':'Punctuality','Tanggung jawab':'Responsibility',
+    'Feb 2024 – Agu 2024':'Feb 2024 – Aug 2024','Teknisi Instalasi Starlink':'Starlink Installation Technician',
+    'Instalasi perangkat':'Installed','(internet berbasis satelit) di lokasi pelanggan':'(satellite-based internet) devices at customer sites',
+    'Memastikan konfigurasi perangkat berjalan dengan baik':'Made sure device configuration worked properly',
+    'Uji kecepatan internet (':'Ran internet ',') untuk menjamin kualitas koneksi':'s to guarantee connection quality',
+    'Satelit':'Satellite','Konfigurasi':'Configuration',
+    'Jan 2023 – Des 2023':'Jan 2023 – Dec 2023','Staff Gudang':'Warehouse Staff','Penyortiran':'Sorted',
+    '500–800 paket per hari':'500–800 parcels per day','sesuai tujuan pengiriman':'by delivery destination',
+    'Bekerja dengan ketelitian tinggi dan cepat dalam operasional gudang':'Worked fast and with high accuracy in warehouse operations',
+    'Sortir':'Sorting','Gudang':'Warehouse','Teliti':'Thorough',
+    'Mar 2022 – Sep 2022':'Mar 2022 – Sep 2022',
+    'Menjaga kebersihan dan kerapihan area kerja':'Kept the work area clean and tidy',
+    'Memastikan ruang kantor nyaman dan mendukung produktivitas karyawan':'Made sure the office was comfortable and supported staff productivity',
+    'Disiplin':'Discipline','Kerapihan':'Tidiness','SMK Fadilah — Otomotif':'SMK Fadilah — Automotive','Pendidikan':'Education',
+    'Lulus tahun 2021. Dasar kerja teknis, disiplin bengkel, dan keselamatan kerja yang terbawa hingga ke pekerjaan lapangan.':'Graduated in 2021. Technical fundamentals, workshop discipline, and work safety that carried over into field work.',
+    'Staging & instalasi':'Staging & installation','Lihat detail':'View details','instalasi + speed test':'installation + speed test',
+    'Instalasi Starlink':'Starlink Installation','unit terpasang':'units installed','53 unit masing-masing':'53 units each',
+    '+ 53 digital signage':'+ 53 digital signage','Dapur & sekolah':'Kitchens & schools','INSTALASI DI':'INSTALLED AT',
+    'LOKASI SPPG':'SPPG SITES','6 Lokasi SPPG':'6 SPPG Sites','Tarik kabel & crimping':'Cable pulling & crimping',
+    'Ayo buat sesuatu yang keren bersama!':'Let\u2019s build something cool together!','Terima kasih sudah berkunjung!':'Thanks for visiting!',
+    'Desain, konten & foto:':'Design, content & photos:','· Dibangun dengan HTML, CSS & JavaScript · Di-host di':'· Built with HTML, CSS & JavaScript · Hosted on',
+    'Belum ada foto lapangan. Letakkan berkas':'No field photo yet. Add the file','untuk menampilkannya di sini.':'to show it here.',
+    '· Jakarta Selatan':'· South Jakarta','Feb 2024 – Agu 2024 · Teknisi Instalasi Starlink':'Feb 2024 – Aug 2024 · Starlink Installation Technician',
+    'Sebagai teknisi instalasi Starlink, memasang perangkat dari titik nol hingga internet siap pakai, lengkap dengan pengujian kecepatan dan serah terima ke pelanggan.':'As a Starlink installation technician, I set up devices from scratch until the internet was ready to use, complete with speed testing and handover to the customer.',
+    'Yang saya kerjakan':'What I did',
+    'Survey titik pasang dan orientasi dish untuk sinyal terbaik':'Surveyed mounting points and dish orientation for the best signal',
+    'Pemasangan dish, penarikan kabel, dan setup router':'Mounted the dish, pulled cables, and set up the router',
+    'Aktivasi dan pengecekan koneksi':'Activation and connection checks','Speed test dan serah terima ke pelanggan':'Speed test and handover to the customer',
+    'Instalasi':'Installation','Nov 2025 – Jan 2026 · Field Installation & Tim Staging':'Nov 2025 – Jan 2026 · Field Installation & Staging Team',
+    'Menyiapkan dan memasang 53 unit switch serta 53 unit router sebagai tulang punggung jaringan di proyek IoT BGN–PERURI.':'Prepared and installed 53 switches and 53 routers as the network backbone of the IoT BGN–PERURI project.',
+    'Staging perangkat dan pembaruan konfigurasi':'Device staging and configuration updates',
+    'Pelabelan port dan kabel agar rapi dan mudah dirawat':'Labeled ports and cables to keep them tidy and easy to maintain',
+    'Pemasangan di rak dan lokasi':'Rack and on-site mounting','Pemasangan 53 titik POP sebagai titik distribusi jaringan':'Installed 53 POPs as network distribution points',
+    'Uji konektivitas & troubleshooting awal antar perangkat':'Connectivity testing & initial troubleshooting between devices','Jaringan':'Networking',
+    'Instalasi 795 unit PVR untuk sekolah dan 53 unit digital signage sebagai bagian dari penyebaran perangkat IoT BGN–PERURI.':'Installed 795 PVR units for schools and 53 digital signage units as part of the IoT BGN–PERURI device rollout.',
+    'Pemasangan dan konfigurasi tiap unit PVR':'Installed and configured each PVR unit','Setup digital signage dan tampilannya':'Set up digital signage and its display',
+    'Pengujian tiap unit sebelum serah terima':'Tested each unit before handover','Dokumentasi jumlah dan lokasi perangkat':'Documented device counts and locations',
+    'Instalasi massal':'Mass installation','Sekolah':'Schools',
+    'Penarikan kabel LAN dan terminasi RJ-45 di 6 lokasi SPPG untuk mendukung jaringan lokal yang stabil.':'LAN cable pulling and RJ-45 termination at 6 SPPG sites to support a stable local network.',
+    'Survey jalur kabel tiap lokasi':'Surveyed cable routes at each site','Penarikan dan perapian kabel LAN':'Pulled and tidied LAN cables',
+    'Crimping dan terminasi konektor RJ-45':'Crimped and terminated RJ-45 connectors','Penyesuaian dengan infrastruktur eksisting di lapangan':'Adapted to existing on-site infrastructure',
+    'Uji koneksi tiap titik sebelum serah terima':'Tested every point before handover','Kabel UTP':'UTP cable','6 lokasi':'6 sites',
+    'Bagian dari tim staging dan instalasi proyek IoT BGN–PERURI. Menyiapkan serta memasang lebih dari 260 unit CCTV merek Hiview & Skyview — dari konfigurasi awal sampai kamera aktif dan merekam.':'Part of the staging and installation team for the IoT BGN–PERURI project. Prepared and installed more than 260 Hiview & Skyview CCTV units — from initial configuration until the cameras were live and recording.',
+    'Staging dan pelabelan perangkat sebelum dikirim ke lokasi':'Staged and labeled devices before shipping to site',
+    'Konfigurasi IP dan DHCP tiap kamera':'Configured IP and DHCP for each camera','Pemasangan serta pengarahan kamera di titik lapangan':'Mounted and aimed cameras on site',
+    'Uji rekaman dan koneksi ke perangkat perekam':'Tested recording and connection to the recorder','Konfigurasi DHCP':'DHCP configuration','Instalasi lapangan':'Field installation',
+    '🌐 Bahasa':'🌐 Language'
+  };
+  var ATTR_EN={
+    'Kembali ke atas':'Back to top','Navigasi utama':'Main navigation','Foto Muhammad Fajar Ariandi':'Photo of Muhammad Fajar Ariandi',
+    'Perjalanan singkat':'Short journey','Karakter kerja':'Work traits','Foto Fajar berdiri di zebra cross':'Photo of Fajar standing on a zebra crossing',
+    'Pencapaian dalam angka':'Achievements in numbers','Lihat detail proyek: CCTV ±260 unit':'View project details: CCTV ±260 units',
+    'Poster proyek CCTV lebih dari 260 unit':'Poster of the 260+ unit CCTV project','Lihat detail proyek: Instalasi Starlink':'View project details: Starlink installation',
+    'Poster instalasi Starlink':'Starlink installation poster','Lihat detail proyek: Switch dan Router':'View project details: Switches and routers',
+    'Poster 53 switch dan 53 router':'Poster of 53 switches and 53 routers','Lihat detail proyek: PVR dan Digital Signage':'View project details: PVR and digital signage',
+    'Poster 795 PVR sekolah dan 53 digital signage':'Poster of 795 school PVRs and 53 digital signage units','Lihat detail proyek: 6 lokasi SPPG':'View project details: 6 SPPG sites',
+    'Poster instalasi di 6 lokasi SPPG':'Poster of installation at 6 SPPG sites','Tutup detail':'Close details',
+    'Foto lapangan instalasi Starlink':'Field photo of Starlink installation','Foto lapangan switch dan router':'Field photo of switches and routers',
+    'Foto lapangan PVR dan digital signage':'Field photo of PVR and digital signage','Foto lapangan instalasi di lokasi SPPG':'Field photo of installation at SPPG sites',
+    'Foto lapangan proyek CCTV':'Field photo of the CCTV project','Pilih bahasa':'Choose language'
+  };
+  var META={
+    id:{title:document.title,desc:(document.querySelector('meta[name="description"]')||{}).content},
+    en:{title:'Muhammad Fajar Ariandi — IT/Network & Content Creator Portfolio',desc:'Portfolio of Muhammad Fajar Ariandi: a network and CCTV technician who also creates content with Canva, CapCut, and Lightroom.'}
+  };
+  // simpan teks asli (ID)
+  var texts=[], attrs=[], htmlEls=[].slice.call(document.querySelectorAll('[data-i18n-html]'));
+  htmlEls.forEach(function(el){el._id=el.getAttribute('data-id-html')||el.innerHTML;});
+  var w=document.createTreeWalker(document.querySelector('main'),NodeFilter.SHOW_TEXT,null);
+  var n; while((n=w.nextNode())){
+    if(n.parentNode.closest('[data-i18n-html]')) continue;
+    var raw=n.nodeValue, key=raw.replace(/\s+/g,' ').trim();
+    if(key&&EN.hasOwnProperty(key)) texts.push({n:n,id:raw,en:raw.replace(raw.trim(),EN[key])});
+  }
+  document.querySelectorAll('[aria-label],[alt]').forEach(function(el){
+    ['aria-label','alt'].forEach(function(a){var v=el.getAttribute(a);if(v&&ATTR_EN[v])attrs.push({el:el,a:a,id:v,en:ATTR_EN[v]});});
+  });
+  function resplit(el){
+    if(!el.hasAttribute('data-split')||!window.__splitWords) return;
+    window.__splitWords(el);
+  }
+  function apply(lang){
+    var en=lang==='en';
+    d.lang=en?'en':'id';
+    texts.forEach(function(t){t.n.nodeValue=en?t.en:t.id;});
+    attrs.forEach(function(t){t.el.setAttribute(t.a,en?t.en:t.id);});
+    htmlEls.forEach(function(el){
+      var key=el.getAttribute('data-i18n-html');
+      el.innerHTML=en?HTML_EN[key]:el._id; resplit(el);
+    });
+    document.querySelectorAll('[data-count]').forEach(function(b){
+      if(!b.dataset.suffixId) b.dataset.suffixId=b.dataset.suffix||'';
+      if(b.dataset.suffixEn){b.dataset.suffix=en?b.dataset.suffixEn:b.dataset.suffixId;
+        b.textContent=b.textContent.replace(/[^\d±]+$/,'')+b.dataset.suffix;}
+    });
+    document.title=META[lang].title;
+    var md=document.querySelector('meta[name="description"]'); if(md) md.content=META[lang].desc;
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      var on=b.dataset.lang===lang; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on);
+    });
+    try{localStorage.setItem('lang',lang);}catch(e){}
+  }
+  var m=location.search.match(/[?&]lang=(en|id)/), saved=null;
+  try{saved=localStorage.getItem('lang');}catch(e){}
+  var start=m?m[1]:(saved||'id');
+  document.querySelectorAll('.lang-switch button').forEach(function(b){
+    b.addEventListener('click',function(){apply(b.dataset.lang);});
+  });
+  if(start!=='id') apply(start); else apply('id');
 })();
 </script>
 </body>
