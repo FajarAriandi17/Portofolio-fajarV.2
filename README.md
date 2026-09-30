@@ -87,9 +87,13 @@ Contoh kategori:
 * Lightroom
 * Digital Content
 
-### 💼 Professional Experience
+### 📊 Stats Counter
 
-Riwayat pengalaman kerja ditampilkan dalam bentuk timeline/entry yang mudah dibaca.
+Angka pencapaian dari CV (±260 CCTV, 795 PVR, 159 switch/router/POP, 800 paket/hari, 4+ tahun) dengan animasi hitung naik saat di-scroll.
+
+### 💼 Professional Experience (Timeline)
+
+Timeline zig-zag dua kolom berisi detail tiap pekerjaan dari CV — tanggal, perusahaan, lokasi, poin tugas, dan tag skill — dengan animasi slide-in, dot pop, dan efek tilt 3D saat hover. Di mobile berubah menjadi timeline satu kolom.
 
 ### 🎨 Selected Work
 
@@ -372,7 +376,8 @@ Setelah repository terhubung dengan GitHub Pages, perubahan pada branch `main` d
 | `/#top`        | Hero           |
 | `/#tentang`    | About Me       |
 | `/#skill`      | Skills & Tools |
-| `/#pengalaman` | Experience     |
+| `/#keahlian`   | Keahlian (skill bar) + Pendidikan |
+| `/#pengalaman` | Timeline Perjalanan Karier |
 | `/#kontak`     | Contact        |
 | `/#karya`      | Selected Work  |
 | `/cv.html`     | Digital CV     |
@@ -415,6 +420,18 @@ Animasi juga menggunakan pendekatan yang lebih ringan dengan `transform` dan `op
 * [x] Structured data
 * [x] Accessibility improvements
 * [x] GitHub Pages support
+
+### ✅ Version 2.1 (30 Sep 2026)
+
+* [x] Foto hero & stiker **"IT / JARINGAN & KONTEN KREATOR"** diposisikan tepat di tengah
+* [x] Halo teks berputar di belakang foto + chip info melayang (parallax mouse)
+* [x] Section **Keahlian** dengan skill bar beranimasi + kartu pendidikan
+* [x] Section **Stats** dengan animasi counter
+* [x] Section **Perjalanan Karier** (timeline detail dari CV terbaru)
+* [x] Scroll progress bar & tombol kembali ke atas
+* [x] `cv.html` diperbarui dengan poin tugas per pekerjaan
+* [x] Credit pemilik di footer
+* [x] Perbaikan bug: nama `@keyframes pop` bentrok antara foto hero & modal
 
 ### 🔄 Future Improvements
 
@@ -507,6 +524,13 @@ Kode dan desain dibuat untuk kebutuhan personal portfolio.
 Jika ingin menggunakan bagian dari project ini untuk kebutuhan lain, silakan hubungi pemilik repository terlebih dahulu.
 
 ---
+
+## 🙏 Credits
+
+* **Konten, foto & data CV:** Muhammad Fajar Ariandi
+* **Desain & pengembangan:** Muhammad Fajar Ariandi
+* **Font:** Bowlby One, Patrick Hand, Caveat Brush (Google Fonts, SIL Open Font License) — di-embed sebagai WOFF2
+* **Hosting:** GitHub Pages
 
 <p align="center">
   <strong>Built with ❤️ by Muhammad Fajar Ariandi</strong>
